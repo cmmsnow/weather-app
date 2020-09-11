@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My weather app</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control form"
+              id="city-input"
+              placeholder="search city"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2 search"
+              >
+                🔍
+              </button>
+            </div>
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary gps-button"
+                type="button"
+                id="button-addon2 search gps-button"
+              >
+                current spot📍
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <h2>
+            <span id="current-day">Thurs </span
+            ><span id="current-time">16:30</span><br /><span id="main-city"
+              >New York</span
+            ><br /><span class="temperature" id="main-temp">83˚</span
+            ><span id="temp-change"
+              ><a href="#" id="fahrenheit">F</a> |
+              <a href="#" id="celcius">C</a></span
+            >
+          </h2>
+        </div>
+        <div class="col-4">
+          <h1>⛅️</h1>
+        </div>
+        <div class="col-4">
+          <h3>Partly cloudy<br />70% humidity<br />Winds 2mph</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2">
+          <p>
+            <span class="day">Sun</span><br /><span class="small-emoji"
+              >⛅️</span
+            ><br />73˚/89˚
+          </p>
+        </div>
+        <div class="col-2">
+          <p>
+            <span class="day">Mon</span><br /><span class="small-emoji">☀️</span
+            ><br />73˚/92˚
+          </p>
+        </div>
+        <div class="col-2">
+          <p>
+            <span class="day">Tues</span><br /><span class="small-emoji"
+              >☀️</span
+            ><br />73˚/91˚
+          </p>
+        </div>
+        <div class="col-2">
+          <p>
+            <span class="day">Wed</span><br /><span class="small-emoji">🌩</span
+            ><br />73˚/89˚
+          </p>
+        </div>
+        <div class="col-2">
+          <p>
+            <span class="day">Thurs</span><br /><span class="small-emoji"
+              >🌩</span
+            ><br />73˚/87˚
+          </p>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
