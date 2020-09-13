@@ -70,3 +70,15 @@ a {
   bottom: 22px;
   left: 5px;
 }
+
+.github-footer {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 11px;
+  padding-top: 0;
+  text-align: center;
+}
+
+.github-link {
+  /*color: #4c81c7;*/
+  color: rgba(0, 0, 0, 0.5);
+}
