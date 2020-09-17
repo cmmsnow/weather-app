@@ -29,9 +29,10 @@ h2 {
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 25px;
   padding-top: 40px;
+  text-transform: capitalize;
 }
 
 h4 {

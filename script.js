@@ -66,14 +66,17 @@ function showWeather(response) {
   let mainCity = document.querySelector("#main-city");
   let mainTemp = document.querySelector("#main-temp");
   let humidity = document.querySelector("#humidity");
+  let description = document.querySelector("#description");
 
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let humidityPercent = response.data.main.humidity;
+  let weatherDescription = response.data.weather[0].description;
 
   mainCity.innerHTML = `${city}`;
   mainTemp.innerHTML = `${temperature}˚`;
   humidity.innerHTML = `${humidityPercent}`;
+  description.innerHTML = `${weatherDescription}`;
 }
 
 function retrievePosition(position) {
