@@ -61,12 +61,19 @@ celcius.addEventListener("click", changeToCelcius);*/
 
 //GPS weather button
 function showWeather(response) {
+  console.log(response.data);
+
   let mainCity = document.querySelector("#main-city");
   let mainTemp = document.querySelector("#main-temp");
+  let humidity = document.querySelector("#humidity");
+
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
+  let humidityPercent = response.data.main.humidity;
+
   mainCity.innerHTML = `${city}`;
   mainTemp.innerHTML = `${temperature}˚`;
+  humidity.innerHTML = `${humidityPercent}`;
 }
 
 function retrievePosition(position) {
