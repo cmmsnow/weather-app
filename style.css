@@ -18,21 +18,21 @@ p {
 }
 
 h1 {
-  font-size: 100px;
-  padding-top: 17px;
+  font-size: 90px;
+  padding-top: 23px;
 }
 
 h2 {
   font-size: 24px;
   font-weight: 500;
   padding-left: 6px;
-  padding-top: 30px;
+  padding-top: 36px;
 }
 
 h3 {
   font-size: 17px;
   line-height: 25px;
-  padding-top: 40px;
+  padding-top: 27px;
   text-transform: capitalize;
 }
 
