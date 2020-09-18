@@ -5,6 +5,7 @@
   margin: 20px auto;
   max-width: 500px;
   padding: 30px;
+  padding-top: 25px;
 }
 
 h1,
@@ -82,4 +83,8 @@ a {
 .github-link {
   /*color: #4c81c7;*/
   color: rgba(0, 0, 0, 0.5);
+}
+
+.day-and-time {
+  padding: 0;
 }
