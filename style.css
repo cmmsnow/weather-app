@@ -21,7 +21,6 @@ h4,
 p {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  text-transform: capitalize;
 }
 
 h1 {
@@ -69,7 +68,7 @@ a {
 
 #current-day,
 #current-time {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #temp-change {
@@ -92,9 +91,14 @@ a {
 }
 
 .day-and-time {
-  padding: 0;
+  font-size: 14px;
+  padding-top: 20px;
 }
 
+h1,
+h2,
+h3,
+h4,
 p::first-letter {
   text-transform: capitalize;
 }
