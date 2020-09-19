@@ -21,6 +21,7 @@ h4,
 p {
   font-family: "Poppins", sans-serif;
   text-align: center;
+  text-transform: capitalize;
 }
 
 h1 {
@@ -39,7 +40,6 @@ h3 {
   font-size: 17px;
   line-height: 25px;
   padding-top: 30px;
-  text-transform: capitalize;
 }
 
 h4 {
@@ -93,4 +93,8 @@ a {
 
 .day-and-time {
   padding: 0;
+}
+
+p::first-letter {
+  text-transform: capitalize;
 }
