@@ -26,12 +26,51 @@ let time = `${hours}:${minutes}`;
 currentDay.innerHTML = day;
 currentTime.innerHTML = time;
 
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+//forecast
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  console.log(forecast);
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-2">
+          <p>
+            <span class="increment">${formatHours(forecast.dt * 1000)}</span>
+          </p>
+          <img src="http://openweathermap.org/img/wn/${
+            forecast.weather[0].icon
+          }@2x.png" id="forecast-pic" />
+          <p>
+            ${Math.round(forecast.main.temp_max)}˚/${Math.round(
+      forecast.main.temp_min
+    )}˚
+          </p>
+        </div>`;
+  }
+}
+
 //city search
 function searchCity(searchedCity) {
   let apiKey = "6ad2af0e6e1670b40ddda4b103040cf3";
   let city = searchedCity;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
   axios.get(url).then(showWeather);
+
+  url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
+  axios.get(url).then(displayForecast);
 }
 
 function changeCity(event) {
@@ -48,8 +87,6 @@ button.addEventListener("click", changeCity);
 
 //GPS weather button
 function showWeather(response) {
-  console.log(response.data);
-
   let mainCity = document.querySelector("#main-city");
   let mainTemp = document.querySelector("#main-temp");
   let humidity = document.querySelector("#humidity");

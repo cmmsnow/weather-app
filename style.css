@@ -38,7 +38,7 @@ h2 {
 h3 {
   font-size: 17px;
   line-height: 25px;
-  padding-top: 30px;
+  padding-top: 35px;
 }
 
 h4 {
@@ -47,7 +47,8 @@ h4 {
 }
 
 p {
-  padding-top: 35px;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -64,12 +65,18 @@ img {
   left: 15px;
 }
 
+div.col-2 {
+  padding: 0;
+}
+
 .temperature {
   font-size: 44px;
 }
 
-.day {
+.increment {
   font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
 
 .small-emoji {
@@ -127,4 +134,8 @@ p::first-letter {
   color: rgb(33, 37, 41);
   cursor: default;
   text-decoration: none;
+}
+
+#forecast {
+  padding-top: 45px;
 }
