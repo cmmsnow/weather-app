@@ -94,4 +94,13 @@ fahrenheit.addEventListener("click", changeToFahrenheit);
 let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", changeToCelcius);
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  searchCity(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
 searchCity("Philadelphia");
