@@ -51,7 +51,11 @@ p {
 }
 
 a {
-  color: black;
+  color: #8f0097;
+}
+
+a:hover {
+  color: #73008f;
 }
 
 .temperature {
@@ -86,7 +90,6 @@ a {
 }
 
 .github-link {
-  /*color: #4c81c7;*/
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -106,4 +109,15 @@ h3,
 h4,
 p::first-letter {
   text-transform: capitalize;
+}
+
+.active {
+  color: rgb(33, 37, 41);
+  cursor: default;
+}
+
+.active:hover {
+  color: rgb(33, 37, 41);
+  cursor: default;
+  text-decoration: none;
 }

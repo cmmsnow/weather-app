@@ -56,8 +56,10 @@ function showWeather(response) {
   let description = document.querySelector("#description");
   let wind = document.querySelector("#wind");
 
+  fahrenheitTemperature = response.data.main.temp;
+
   mainCity.innerHTML = `${response.data.name}`;
-  mainTemp.innerHTML = `${Math.round(response.data.main.temp)}˚`;
+  mainTemp.innerHTML = `${Math.round(fahrenheitTemperature)}˚`;
   humidity.innerHTML = `${response.data.main.humidity}`;
   description.innerHTML = `${response.data.weather[0].description}`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)}`;
@@ -81,12 +83,22 @@ gpsButton.addEventListener("click", accessUrl);
 //fahrenheit and celcius switch
 function changeToFahrenheit(event) {
   event.preventDefault();
-  mainTemp.innerHTML = Math.round(response.data.main.temp);
+  celcius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  mainTemp.innerHTML = `${Math.round(fahrenheitTemperature)}˚`;
 }
 function changeToCelcius(event) {
-  event.preventDefault;
-  mainTemp.innerHTML = (mainTemp.innerHTML * 9) / 5 + 32;
+  event.preventDefault();
+  fahrenheit.classList.remove("active");
+  celcius.classList.add("active");
+  let celsiusTemperature = `${Math.round(
+    ((fahrenheitTemperature - 32) * 5) / 9
+  )}˚`;
+  mainTemp.innerHTML = celsiusTemperature;
 }
+
+let mainTemp = document.querySelector("#main-temp");
+let fahrenheitTemperature = null;
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeToFahrenheit);
