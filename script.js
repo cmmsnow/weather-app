@@ -46,19 +46,6 @@ function changeCity(event) {
 let button = document.querySelector("button");
 button.addEventListener("click", changeCity);
 
-//fahrenheit and celcius switch
-/*let fahrenheit = document.querySelector("#fahrenheit");
-let celcius = document.querySelector("#celcius");
-let mainTemp = document.querySelector("#main-temp");
-function changeToFahrenheit() {
-  mainTemp.innerHTML = "83˚";
-}
-function changeToCelcius() {
-  mainTemp.innerHTML = "28˚";
-}
-fahrenheit.addEventListener("click", changeToFahrenheit);
-celcius.addEventListener("click", changeToCelcius);*/
-
 //GPS weather button
 function showWeather(response) {
   console.log(response.data);
@@ -90,3 +77,21 @@ function accessUrl() {
 
 let gpsButton = document.querySelector(".gps-button");
 gpsButton.addEventListener("click", accessUrl);
+
+//fahrenheit and celcius switch
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  mainTemp.innerHTML = Math.round(response.data.main.temp);
+}
+function changeToCelcius(event) {
+  event.preventDefault;
+  mainTemp.innerHTML = (mainTemp.innerHTML * 9) / 5 + 32;
+}
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeToFahrenheit);
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click", changeToCelcius);
+
+searchCity("Philadelphia");
