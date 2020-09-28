@@ -61,6 +61,11 @@ a:hover {
 
 img {
   position: relative;
+  right: 12px;
+}
+
+#icon {
+  position: relative;
   top: 25px;
   left: 15px;
 }
