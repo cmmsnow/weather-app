@@ -52,7 +52,7 @@ function displayForecast(response) {
           </p>
           <img src="http://openweathermap.org/img/wn/${
             forecast.weather[0].icon
-          }@2x.png" id="forecast-pic" />
+          }@2x.png" />
           <p>
             ${Math.round(forecast.main.temp_max)}˚/${Math.round(
       forecast.main.temp_min
@@ -114,6 +114,9 @@ function retrievePosition(position) {
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
   axios.get(url).then(showWeather);
+
+  url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+  axios.get(url).then(displayForecast);
 }
 
 function accessUrl() {
